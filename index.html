@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YEnglish</title>
+    <style>
+
+
+.edditAble {
+
+background-color: rgb(196, 196, 196);
+
+
+}
+
+
+table {
+    width: 100%;
+}
+
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        
+        tr:nth-child(even) {
+          background-color: rgba(150, 212, 212, 0.4);
+        }
+        
+        tr {
+            height: 50px;
+        }
+
+        td th {
+            
+            justify-content: center;
+            
+            text-align: center;
+        }
+
+        .head {
+
+            background-color: rgba(150, 212, 212, 0.4);
+
+        }
+
+        .tableWord {
+                
+                width: 30%;
+        }
+
+        th:nth-child(even),td:nth-child(even) {
+          background-color: rgba(150, 212, 212, 0.4);
+        }
+
+        #main  {
+
+            justify-content: center;
+            
+            text-align: center;
+        }
+
+        
+
+        #englishWord {
+
+            width: 50%;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        
+        #arabicWord {
+
+            width: 50%;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            text-align: center;
+            }
+
+
+
+        #checkButton {
+
+            width: 10%;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 10px;
+            background-color: rgb(74, 215, 168);
+        }
+
+        #clear {
+
+            width: 10%;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 10px;
+            background-color: rgb(203, 83, 187);
+        }
+
+        .delete {
+
+            width: 30%;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 5px;
+            background-color: rgb(48, 206, 214);
+
+
+        }
+
+        .eddit {
+            
+            width: 30%;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 5px;
+            background-color: rgb(98, 113, 246);
+
+
+        }
+
+        .confirm {
+
+            width: 20%;
+            height: 45px;
+            font-size: 22px;
+            border-radius: 10px;
+            border: 1px solid rgb(73, 29, 111);
+            text-align: center;
+            margin-left: 5px;
+            background-color: rgb(99, 206, 38);
+
+
+
+
+        }
+
+        .save {
+
+            background-color: aquamarine;
+
+        }
+        
+        .center {
+
+            
+           text-align: center;
+
+        }
+
+        .checkBox {
+
+            width: 20%;
+            height: 20px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            text-align: center;
+            margin-left: 5px;
+            background-color: rgb(48, 76, 214);
+
+        }
+
+    .done {
+            text-decoration: line-through;
+                    }
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 5px;
+    width: 100%;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+   
+
+
+        </style>
+
+
+<meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+    <div class="topnav">
+        <a class="active">Homes</a>
+        <a onclick="openWordsPage ()" >Words</a>
+        <a onclick="openSettingsPage ()">Setting</a>
+        <a>About</a>
+      </div>
+<br>
+<br><br><br>
+<br>
+<br>
+
+    <div id="main">
+
+      <input type="text" id="arabicWord" placeholder="Enter English word" readonly>
+     
+          <br>
+      <br>
+        <input type="password" id="englishWord" placeholder="Enter English word" onpaste="return false;" ondrop="return false;" autocomplete="off" autocomplete="nope">
+        <br>
+        <br>
+        <button  onclick="checkWord()" id="checkButton">Check</button>
+        <button  id="clear">Clear</button> <br> <br>
+        
+    </div>
+    <br>
+    <br>
+
+
+
+
+
+
+<script src="storage.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
