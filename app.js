@@ -2,6 +2,7 @@ let englishWordContainer = document.getElementById('englishWord');
 let arabicWordContainer = document.getElementById('arabicWord');
 let checkButton = document.getElementById('checkButton');
 let clearButton = document.getElementById('clear');
+let setTimeOutVariaableForSowRightFunction ;
 
 let data = loadData();
 
@@ -91,12 +92,15 @@ function checkWord() {
 
     var EnglishWord = getEnglishWord();
 
-    var userAnswer = englishWordContainer.value;
+    var userAnswer = englishWordContainer.value
+    userAnswer = userAnswer.toLowerCase().trim();
 
     if (userAnswer === EnglishWord) {
         clear();
         wordSelect();
+        showRightMessage()
     } else {
+        checkWordDEfreences()
        console.log("wrong");
        console.log(EnglishWord);
     }
@@ -210,5 +214,44 @@ function hintIsEnabled(){
         }
         
     }
+
+    }
+
+
+    function checkWordDEfreences (){
+   
+        englishWordContainer.classList.add('error')
+
+        englishWordContainer.addEventListener('focus',resetWordDefrencess)
+        englishWordContainer.addEventListener('keyup',resetWordDefrencess)
+
+    }
+
+    function resetWordDefrencess(){
+
+        englishWordContainer.removeEventListener('focus', resetWordDefrencess)
+        englishWordContainer.removeEventListener('keyup',resetWordDefrencess)
+        englishWordContainer.classList.remove('error')
+
+
+
+    }
+
+
+    function showRightMessage() {
+
+        arabicWordContainer.classList.add('right')
+        englishWordContainer.addEventListener('focus', resetArabicContainer)
+        englishWordContainer.addEventListener('keyup',resetArabicContainer)
+        setTimeOutVariaableForSowRightFunction = setTimeout(resetArabicContainer, 5000)
+    }
+
+
+    function resetArabicContainer (){
+
+        englishWordContainer.removeEventListener('focus', resetArabicContainer)
+        englishWordContainer.removeEventListener('keyup',resetArabicContainer)
+        arabicWordContainer.classList.remove('right')
+        clearTimeout(setTimeOutVariaableForSowRightFunction)
 
     }
